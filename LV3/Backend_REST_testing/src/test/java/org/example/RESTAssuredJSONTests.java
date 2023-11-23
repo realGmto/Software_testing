@@ -19,5 +19,19 @@ public class RESTAssuredJSONTests {
         response.then().body("id", hasItems(1, 2));
         response.then().body("name", hasItems("Pankaj"));
     }
+    @Test
+    public void post_test() {
+        Response response = given().
+                contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body("{\"name\": \"Lisa\",\"salary\": \"2000\"}")
+                .when()
+                .post(ROOT_URI + "/create");
+        System.out.println("POST Response\n" + response.asString());
+// tests
+        response.then().body("id", Matchers.any(Integer.class));
+        response.then().body("name", Matchers.is("Lisa"));
+    }
+
 
 }
