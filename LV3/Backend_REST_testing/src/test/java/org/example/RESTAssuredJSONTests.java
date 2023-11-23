@@ -32,6 +32,18 @@ public class RESTAssuredJSONTests {
         response.then().body("id", Matchers.any(Integer.class));
         response.then().body("name", Matchers.is("Lisa"));
     }
+    @Test
+    public void put_test() {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body("{\"name\": \"Lisa Tamaki\",\"salary\": \"45000\"}")
+                .when()
+                .put(ROOT_URI + "/update/3");
+        System.out.println("PUT Response\n" + response.asString());
+        response.then().body("id", Matchers.is(3));
+        response.then().body("name", Matchers.is("Lisa Tamaki"));
+        response.then().body("salary", Matchers.is("45000"));
 
-
+    }
 }
