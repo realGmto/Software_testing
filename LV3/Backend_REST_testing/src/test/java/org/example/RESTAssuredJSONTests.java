@@ -46,4 +46,16 @@ public class RESTAssuredJSONTests {
         response.then().body("salary", Matchers.is("45000"));
 
     }
+
+    @Test
+    public void delete_test() {
+        Response response = delete(ROOT_URI + "/delete/3");
+        System.out.println(response.asString());
+        System.out.println(response.getStatusCode());
+// check if id=3 is deleted
+        response = get(ROOT_URI + "/list");
+        System.out.println(response.asString());
+        response.then().body("id", Matchers.not(3));
+    }
+
 }
