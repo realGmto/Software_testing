@@ -1,20 +1,19 @@
 {
-    "employees": [
-        {
-            "name": "Pankaj",
-            "salary": "45000",
-            "id": 1
-        },
-        {
-            "name": "David",
-            "salary": "5000",
-            "id": 2
-        },
-        {
-            "name": "Lisa Tamaki",
-            "salary": "30000",
-            "id": 3
-        }
-    ]
+  "employees": [
+    {
+      "name": "Pankaj",
+      "salary": "45000",
+      "id": 1
+    },
+    {
+      "name": "David",
+      "salary": "5000",
+      "id": 2
+    },
+    {
+      "name": "Lisa Tamaki",
+      "salary": "45000",
+      "id": 3
+    }
+  ]
 }
-   
